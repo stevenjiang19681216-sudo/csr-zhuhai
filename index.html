@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珠海市汉瑞克安德生电气有限公司 | 企业社会责任</title>
+    <style>
+        :root {
+            --primary: #1F3864;
+            --accent: #C9A84C;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-muted: #666;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1f3d 100%);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .logo-placeholder {
+            width: 80px; height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 2rem;
+            color: var(--accent);
+        }
+        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 0.5rem; }
+        .tagline { color: var(--accent); font-size: 1rem; font-weight: 500; }
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--accent); }
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        section { margin-bottom: 3rem; }
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 60px; height: 3px;
+            background: var(--accent);
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .cert-item {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cert-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .cert-badge { font-size: 3rem; margin-bottom: 1rem; }
+        .cert-title { font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+        .eco-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        .eco-badge {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 250px;
+        }
+        .eco-score { font-size: 2.5rem; font-weight: 700; color: var(--primary); }
+        .eco-label { font-size: 1rem; color: var(--text-muted); margin-top: 0.5rem; }
+        .eco-target { color: var(--accent); font-weight: 700; }
+        .commitment-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8edf3 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .values-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .value-item { text-align: center; }
+        .value-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .stat-item {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .stat-number { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .stat-label { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        .update-date { color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem; }
+        .kpi-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .kpi-table th, .kpi-table td {
+            padding: 0.75rem 1rem;
+            border: 1px solid #eee;
+            text-align: left;
+        }
+        .kpi-table th { background: var(--primary); color: white; }
+        .kpi-table tr:nth-child(even) { background: var(--bg-light); }
+        @media (max-width: 768px) {
+            nav ul { gap: 1rem; flex-wrap: wrap; }
+            h1 { font-size: 2rem; }
+            main { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-placeholder">汉</div>
+                <div>
+                    <h1>珠海市汉瑞克安德生电气有限公司</h1>
+                    <p class="subtitle">Zhuhai Hanruikeandesen Electric Co., Ltd.</p>
+                </div>
+            </div>
+            <p class="tagline">企业社会责任 · 绿色制造 · 可持续发展</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#certificates">认证证书</a></li>
+            <li><a href="#performance">绩效数据</a></li>
+            <li><a href="#ecovadis">EcoVadis</a></li>
+            <li><a href="#policy">政策承诺</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>关于我们</h2>
+            <div class="card">
+                <p>珠海市汉瑞克安德生电气有限公司是一家专注于电气制造的企业，致力于为客户提供高质量的产品和服务。公司秉承可持续发展理念，将环境保护、社会责任融入日常运营。</p>
+                <br>
+                <p>我们建立了完善的环境管理体系（ISO 14001）、质量管理体系（ISO 9001）和职业健康安全体系（ISO 45001），持续改进企业社会责任表现。</p>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates">
+            <h2>认证证书</h2>
+            <div class="card">
+                <p>我们通过了多项国际标准认证，展现对质量、环境和职业健康安全的高度承诺：</p>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <div class="cert-badge">🏅</div>
+                        <div class="cert-title">ISO 9001:2015</div>
+                        <div>质量管理体系</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-badge">🌱</div>
+                        <div class="cert-title">ISO 14001:2015</div>
+                        <div>环境管理体系</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-badge">🛡️</div>
+                        <div class="cert-title">ISO 45001:2018</div>
+                        <div>职业健康安全</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Data Section -->
+        <section id="performance">
+            <h2>2025年度 CSR 绩效数据</h2>
+            <div class="card">
+                <p><strong>报告年度：</strong>2025年1月1日 - 2025年12月31日<br>
+                <strong>报告编号：</strong>HA-CSR-KPI-2025-001<br>
+                <strong>报告日期：</strong>2026年4月30日</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">劳资纠纷事件</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">工伤事故</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">商业道德违规</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">社保合规缴纳</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ENV -->
+            <div class="card" style="border-left-color: #2e7d32;">
+                <h3 style="color: #2e7d32; margin-bottom: 1rem;">🌿 环境绩效（Environment）</h3>
+                <p>• 2025年用电数据经财务部审核确认，来源于物业公司增值税专用发票<br>
+                • 持续推进节能减排，降低运营环境影响</p>
+            </div>
+
+            <!-- Labor -->
+            <div class="card" style="border-left-color: #1565c0;">
+                <h3 style="color: #1565c0; margin-bottom: 1rem;">👷 劳工与人权绩效（Labor & Human Rights）</h3>
+                <p>• 公司依法缴纳社保，全年无劳资纠纷及工伤事故<br>
+                • 通过《员工手册》及《聘用管理程序》保障员工权益</p>
+            </div>
+
+            <!-- Ethics -->
+            <div class="card" style="border-left-color: #6a1b9a;">
+                <h3 style="color: #6a1b9a; margin-bottom: 1rem;">⚖️ 商业道德绩效（Ethics）</h3>
+                <p>• 通过《员工手册》及《聘用管理程序》发布反腐败及信息安全政策<br>
+                • 2025年全年无商业道德违规事件</p>
+            </div>
+
+            <!-- Procurement -->
+            <div class="card" style="border-left-color: #e65100;">
+                <h3 style="color: #e65100; margin-bottom: 1rem;">🤝 可持续采购绩效（Sustainable Procurement）</h3>
+                <p>• 已向主要供应商发放《供应商行为守则》<br>
+                • 2025年对关键供应商"珠海立彩"进行了CSR详细评估</p>
+            </div>
+        </section>
+
+        <!-- EcoVadis Section -->
+        <section id="ecovadis">
+            <h2>EcoVadis 评级</h2>
+            <div class="card">
+                <p>我们致力于通过 EcoVadis 企业社会责任评级认证，展示对可持续发展的承诺：</p>
+                <div class="eco-badges">
+                    <div class="eco-badge">
+                        <div class="eco-score eco-target">Bronze → Silver</div>
+                        <div class="eco-label">目标：保铜冲银（65分+）</div>
+                    </div>
+                    <div class="eco-badge">
+                        <div style="font-size: 2.5rem;">🏆</div>
+                        <div class="eco-label">企业社会责任承诺</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policy Section -->
+        <section id="policy">
+            <h2>政策承诺</h2>
+            <div class="commitment-section">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">可持续发展承诺</h3>
+                <p>珠海市汉瑞克安德生电气有限公司承诺将可持续发展融入运营的每个环节：
+                <br><br>
+                • 减少碳足迹，通过创新制造解决方案<br>
+                • 遵循循环经济原则，最小化废弃物<br>
+                • 确保所有员工安全、公平的工作条件<br>
+                • 与利益相关方和社区负责任地互动<br>
+                • 支持环境绩效的持续改进</p>
+                <div class="values-list">
+                    <div class="value-item">
+                        <div class="value-icon">🔍</div>
+                        <strong>透明</strong>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">⚖️</div>
+                        <strong>公平</strong>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">💚</div>
+                        <strong>环保</strong>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🤝</div>
+                        <strong>责任</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>联系我们</h2>
+            <div class="card">
+                <table class="kpi-table">
+                    <tr>
+                        <th style="width: 30%;">公司名称</th>
+                        <td>珠海市汉瑞克安德生电气有限公司</td>
+                    </tr>
+                    <tr>
+                        <th>英文名称</th>
+                        <td>Zhuhai Hanruikeandesen Electric Co., Ltd.</td>
+                    </tr>
+                    <tr>
+                        <th>联系人</th>
+                        <td>Wendy Yang</td>
+                    </tr>
+                    <tr>
+                        <th>运营地址</th>
+                        <td>广东省珠海市</td>
+                    </tr>
+                    <tr>
+                        <th>认证体系</th>
+                        <td>ISO 9001 / ISO 14001 / ISO 45001</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 珠海市汉瑞克安德生电气有限公司 版权所有</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">企业社会责任绩效数据每年更新</p>
+        <p class="update-date">最后更新：2026年6月 | CSR报告编号：HA-CSR-KPI-2025-001</p>
+    </footer>
+</body>
+</html>
